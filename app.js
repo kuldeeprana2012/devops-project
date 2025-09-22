@@ -1,10 +1,14 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = 3000;
 
-// Root route
+// Serve files from the "public" folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Root route to serve your HTML page
 app.get('/', (req, res) => {
-  res.send('Hello, this is Kuldeep Rana!');
+  res.sendFile(path.join(__dirname, 'public', 'indux.html'));
 });
 
 // Listen on all interfaces
