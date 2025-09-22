@@ -2,7 +2,12 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-// Serve static files from 'public' folder
-app.use(express.static('public'));
+// Root route
+app.get('/', (req, res) => {
+  res.send('Hello, this is Kuldeep Rana!');
+});
 
-app.listen(port, () => console.log(`App running on port ${port}`));
+// Listen on all interfaces
+app.listen(port, '0.0.0.0', () => {
+  console.log(`App running on port ${port}`);
+});
