@@ -3,12 +3,12 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-// Serve static files from "public"
+// Serve static files from public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Root route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'indux.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Listen on all interfaces
